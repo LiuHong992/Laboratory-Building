@@ -1,0 +1,63 @@
+.el-header {
+    padding: 0 !important;
+    height: 150px !important;
+}
+
+.el-badge__content.is-fixed {
+    top: 20px !important;
+    right: 0 !important;
+}
+
+// 输入框样式
+.el-input {
+    width: 15.58% !important;
+    height: 28px !important;
+    margin-top: 20px;
+    margin-left: 22.5%;
+}
+
+.el-input__inner:focus {
+    outline: none;
+    border: 1px solid #08bf91 !important;
+}
+
+.el-main {
+    padding: 0 !important;
+}
+
+.headerwheel {
+    .el-carousel__arrow--left {
+        left: 50% !important;
+        margin-left: -250px !important;
+    }
+    .el-carousel__arrow--right {
+        right: 50% !important;
+        margin-right: -540px !important;
+    }
+}
+
+// 近期好课
+.el-carousel {
+    .el-carousel__indicators--outside {
+        display: none !important;
+    }
+    .el-carousel__arrow {
+        font-size: 24px !important;
+        top: 40% !important;
+    }
+    .el-carousel__arrow--left {
+        left: 5px !important;
+    }
+    .el-carousel__arrow--right {
+        right: 5px !important;
+    }
+}
+
+// 卡片整体
+.el-col-6 {
+    width: 23.2% !important;
+}
+
+.el-card__body {
+    padding: 0 !important;
+}
