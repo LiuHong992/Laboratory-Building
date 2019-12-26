@@ -131,11 +131,13 @@ export default {
 <style scoped lang='scss'>
 // 轮播图片属性
 img {
+  position: relative;
   display: block;
   width: 73.3%;
   min-width: 1000px;
   margin: 0 auto;
 }
+
 // 课程列表
 .courses {
   position: relative;

@@ -113,7 +113,7 @@ export default {
         height: 80px;
         .hide {
           position: relative;
-          top: 1px;
+          top: 2px;
           height: 80px;
           background-color: white;
           transform: translateY(0);

@@ -2,6 +2,9 @@
   <div id="bodys">
     <el-container>
       <el-header>
+        <!-- 吸顶头部 -->
+        <Stickyhead v-if="flag"></Stickyhead>
+        <!-- 头部 -->
         <Headers></Headers>
         <!--头部导航栏-->
         <div class="menulist">
@@ -40,12 +43,6 @@
                 </a>
               </div>
             </el-dropdown>
-            <!-- <div class="morecommunity">
-              <div>讨论</div>
-              <div>教程库</div>
-              <div>直播</div>
-              <div>比赛</div>
-            </div>-->
           </div>
           <!-- 搜索框 -->
           <el-input
@@ -71,28 +68,43 @@
         <Backend></Backend>
         <!-- 云计算与大数据 -->
         <Bigdate></Bigdate>
+        <!-- 训练营强化 -->
+        <Strengthen></Strengthen>
+        <!-- 学习路径 -->
+        <Route></Route>
+        <!-- 网站标签 -->
+        <Coursetags></Coursetags>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer>
+        <Footer></Footer>
+      </el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
+import Stickyhead from '../components/Stickyhead/Stickyhead'
 import Headers from "../components/Header/Header";
 import Wheels from "../components/Wheels/Wheels";
-import Pcourses from '../components/Practicalcourses/Practicalcourses'
-import Selected from '../components/Selected/Selected'
-import Recent from '../components/Recentclass/Recentclass'
-import Basic from '../components/Basicskill/Basicskill'
-import Backend from '../components/Backend/Backend'
-import Bigdate from '../components/Bigdate/Bigdate'
+import Pcourses from "../components/Practicalcourses/Practicalcourses";
+import Selected from "../components/Selected/Selected";
+import Recent from "../components/Recentclass/Recentclass";
+import Basic from "../components/Basicskill/Basicskill";
+import Backend from "../components/Backend/Backend";
+import Bigdate from "../components/Bigdate/Bigdate";
+import Strengthen from "../components/Strengthen/Strengthen";
+import Route from "../components/Route/Route";
+import Coursetags from "../components/Coursetags/Coursetags";
+import Footer from "../components/Footer/Footer";
 export default {
   data() {
     return {
-      input1: ""
+      input1: "",
+      flag: false
     };
   },
   components: {
+    Stickyhead,
     Headers,
     Wheels,
     Pcourses,
@@ -100,15 +112,33 @@ export default {
     Recent,
     Basic,
     Backend,
-    Bigdate
+    Bigdate,
+    Strengthen,
+    Route,
+    Coursetags,
+    Footer
   },
-  methods: {},
+  methods: {
+    // 吸顶导航栏的判断方法
+    addclass() {
+      // 得到页面滚动的距离
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      // 判断页面滚动的距离是否大于吸顶元素的位置
+      // console.log(scrollTop);
+      let titleTop = 150;
+      if (scrollTop > titleTop) {
+        this.flag = true;
+      } else if (scrollTop < titleTop) {
+        this.flag = false;
+      }
+    }
+  },
   mounted() {
-    // this.$axios.req('/categories').then(res => {
-    //   console.log(res);
-    // }).catch(err => {
-    //   console.log(err);
-    // })
+    // 鼠标滚动距离与浏览器顶部的距离监听，监听时调用的方法
+    window.addEventListener("scroll", this.addclass);
   },
   watch: {},
   computed: {}
@@ -119,8 +149,7 @@ export default {
 #bodys {
   background: #f9f9f9;
 }
-
-/*头部导航栏*/
+// 头部导航栏
 .menulist {
   position: relative;
   display: flex;
@@ -159,6 +188,9 @@ export default {
   width: 364.5px;
   height: 65px;
   line-height: 65px;
+  a {
+    color: #3a3a3a;
+  }
   a:hover {
     cursor: pointer;
     color: #08bf91 !important;

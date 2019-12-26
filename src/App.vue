@@ -1,8 +1,7 @@
 <template>
   <div>
-    <Backtop>
-      <router-view></router-view>
-    </Backtop>
+    <Backtop></Backtop>
+    <router-view />
   </div>
 </template>
 <script>
@@ -18,7 +17,7 @@ export default {
 @import "../src/styles/common";
 * {
   margin: 0;
-  padding: 0;
+  // padding: 0;
 }
 
 a {

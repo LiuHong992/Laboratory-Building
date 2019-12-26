@@ -25,31 +25,40 @@
     padding: 0 !important;
 }
 
+// 头部轮播图
 .headerwheel {
+    .el-carousel__arrow {
+        font-size: 24px !important;
+    }
     .el-carousel__arrow--left {
-        left: 50% !important;
-        margin-left: -250px !important;
+        left: 48% !important;
+        margin-left: -258px !important;
     }
     .el-carousel__arrow--right {
-        right: 50% !important;
-        margin-right: -540px !important;
+        right: 47% !important;
+        margin-right: -507px !important;
     }
 }
 
 // 近期好课
-.el-carousel {
-    .el-carousel__indicators--outside {
+.pcoursecont {
+    .el-carousel {
+        .el-carousel__indicators--outside {
+            display: none !important;
+        }
+        .el-carousel__arrow {
+            font-size: 24px !important;
+            top: 40% !important;
+        }
+        .el-carousel__arrow--left {
+            left: 5px !important;
+        }
+        .el-carousel__arrow--right {
+            right: 5px !important;
+        }
+    }
+    .el-carousel__indicators--horizontal {
         display: none !important;
-    }
-    .el-carousel__arrow {
-        font-size: 24px !important;
-        top: 40% !important;
-    }
-    .el-carousel__arrow--left {
-        left: 5px !important;
-    }
-    .el-carousel__arrow--right {
-        right: 5px !important;
     }
 }
 
@@ -60,4 +69,10 @@
 
 .el-card__body {
     padding: 0 !important;
+}
+
+// 底部
+.el-footer {
+    padding: 0 !important;
+    height: 263px !important;
 }

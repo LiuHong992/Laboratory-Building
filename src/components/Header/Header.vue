@@ -26,8 +26,11 @@ export default {
     return {};
   },
   components: {},
-  methods: {},
-  mounted() {},
+  methods: {
+  },
+  mounted() {
+    
+  },
   watch: {},
   computed: {}
 };
@@ -57,6 +60,9 @@ export default {
   width: 125px;
   height: 85px;
   margin-right: 5px;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .headeright {
